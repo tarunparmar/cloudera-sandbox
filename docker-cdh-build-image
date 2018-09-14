@@ -1,0 +1,7 @@
+FROM centos:centos6
+ENV container docker
+EXPOSE 22 7180
+ADD docker-cdh-*.sh /tmp/
+RUN chmod u+x /tmp/docker-cdh-*.sh
+RUN /tmp/docker-cdh-build.sh
+CMD ["/bin/bash"]
